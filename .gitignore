@@ -1,0 +1,19 @@
+# Visual Studio / VS Code
+.vs/
+.vscode/
+
+# C#
+bin/
+obj/
+
+# Archivos temporales
+*.user
+*.suo
+*.cache
+
+# Compilación>
+Debug/
+Release/
+
+#Carpeta grande
+1DAW/

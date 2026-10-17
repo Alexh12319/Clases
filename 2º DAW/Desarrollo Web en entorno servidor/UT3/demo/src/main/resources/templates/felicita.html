@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Felicidades</title>
+</head>
+<body>
+    <div th:replace="~{fragments/fragmentoHeader}"></div>
+
+    <h1>Hoy el usuario con ID <span th:text="${id}">NO_ID</span> cumple <span th:text="${edad}">inmortal</span> años</h1>
+
+    <ul>
+        <li th:each="i : ${#numbers.sequence(1, edad)}">
+            <a th:href="@{/}">Felicidades <span th:text="${name}">noSignalName</span></a>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+ Colores:
+    -Letra -> #000000
+    -Fondo -> #e3e3e3
+    -Enlaces -> #fa73ff
+    -Hover ->  #c5b9c7
+    -Pie -> #746078 (con texto #ffffff si es muy oscuro)
+
+ Tipografía:
+    -Familia -> Nunito Sans (is such a Goffy name)
+    -Tamaños
+        -Texto normal 
+        -h1: 1.8125rem
+        -h2: 1.5rem
+        -h3: 1.25rem
+        -Pie de pagina: 0.85rem
+
+#Literalmente copiados de PCComponentes XD
+
+ Estructura:
+    -Pagina Principal/Landing: Definido en el documento
+    -Catalogo: Definido en el documento
+    -Ficha producto: Definido en el Documento
+

@@ -7,6 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.BindingResult;
+import jakarta.validation.Valid;
 
 @Controller
 public class AnimalController{
@@ -32,9 +36,21 @@ public class AnimalController{
     }
 
     @GetMapping("/animals/create")
-    public String crearPersona(Model model){
-        model.addAttribute("animal", new Animal())
-        return "animal/create";
+    public String crearAnimal(Model model){
+        model.addAttribute("animal", new Animal());
+        return "create";
+    }
+
+    @PostMapping("/animal/create")
+    public String crearAnimal(@Valid @ModelAttribute("animal") Animal animal,
+                              BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "create";
+        }else{
+            //Modelo Valido
+            as.addAnimal(animal);
+            return "redirect:/animals";
+        }
     }
 }
 

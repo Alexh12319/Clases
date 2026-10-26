@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class AnimalService {
     ArrayList<Animal> animales = new ArrayList<>(
             Arrays.asList(new Animal(1, "Dodo", 50, true), new Animal(2, "Perro", 10, false)));
-    int animalsCount = 0;
+    int animalsCount = 2; //Al poner dos antes, lo inicializo en dos
 
     public ArrayList<Animal> getAnimals(){
         animalsCount = 0;
@@ -28,8 +28,9 @@ public class AnimalService {
     }
 
     public Animal addAnimal(Animal a){
-        animales.add(a);
         animalsCount ++;
+        a.setId(animalsCount);
+        animales.add(a);
         return a;
     }
 

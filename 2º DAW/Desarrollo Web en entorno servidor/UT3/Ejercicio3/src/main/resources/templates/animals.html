@@ -31,6 +31,9 @@
         <td th:text="${animal.getAverageLifeSpan()}"></td>
         <td th:text="${animal.getExtinct()}"></td>
         <td><a class="btn btn-outline-success" th:href="@{/animals/details/{id}(id=${animal.getId()})}">Detalles</a></td>
+        <td><a class="btn btn-outline-success" th:href="@{/animals/edit/{id}(id=${animal.getId()})}">Editar</a></td>
+        <td><a class="btn btn-outline-success" th:href="@{/animals/delete/{id}(id=${animal.getId()})}">Borrar</a></td>
+
     </tr>
     </tbody>
 </table>

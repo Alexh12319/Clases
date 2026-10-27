@@ -41,7 +41,7 @@ public class AnimalController{
         return "create";
     }
 
-    @PostMapping("/animal/create")
+    @PostMapping("/animals/create")
     public String crearAnimal(@Valid @ModelAttribute("animal") Animal animal,
                               BindingResult bindingResult){
         if(bindingResult.hasErrors()){
@@ -52,6 +52,39 @@ public class AnimalController{
             return "redirect:/animals";
         }
     }
+
+    @GetMapping("/animals/edit/{id}")
+    public String EditarAnimal(Model model, @PathVariable int id){
+        model.addAttribute("animal", as.getAnimal(id));
+        return "edit";
+    }
+
+    @PostMapping("/animals/edit")
+    public String EditarAnimal(@Valid @ModelAttribute("animal") Animal animal, BindingResult bindingResult){
+        String resultado = "redirect:/animals";
+        if(bindingResult.hasErrors()){
+            resultado = "edit";
+        }else{
+            //Modelo Valido
+            as.editAnimal(animal);
+        }
+        return resultado;
+    }
+
+    @GetMapping("/animals/delete/{id}")
+    public String borrarAnimal(Model model, @PathVariable int id){
+        model.addAttribute("animal", as.getAnimal(id));
+        return "delete";
+    }
+
+    @PostMapping("/animals/delete")
+    public String borrarAnimal(@Valid @ModelAttribute("animal") Animal animal){
+        as.deleteAnimal(animal.getId());
+        return "redirect:/animals";
+
+    }
+
+
 }
 
 /*

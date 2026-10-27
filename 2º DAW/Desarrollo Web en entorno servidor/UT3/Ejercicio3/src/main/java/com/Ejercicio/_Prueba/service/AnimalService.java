@@ -13,7 +13,6 @@ public class AnimalService {
     int animalsCount = 2; //Al poner dos antes, lo inicializo en dos
 
     public ArrayList<Animal> getAnimals(){
-        animalsCount = 0;
         return animales;
     }
 
@@ -34,12 +33,22 @@ public class AnimalService {
         return a;
     }
 
-    public Animal editAnimal(Animal a){
-        a.setName(a.getName());
-        a.setExtinct(a.getExtinct());
-        a.setId(a.getId());
-        a.setAverageLifeSpan(a.getAverageLifeSpan());
-        return a;
+    public Animal editAnimal(Animal act){
+        boolean encontrado = false;
+        Animal animalAnterior = null;
+        for(int i = 0; i < animales.size(); i++){
+            if(act.getId() == animales.get(i).getId()){
+                animalAnterior = animales.get(i);
+                encontrado = true;
+            }
+        }
+
+        if(encontrado){
+            animalAnterior.setExtinct(act.getExtinct());
+            animalAnterior.setAverageLifeSpan(act.getAverageLifeSpan());
+            animalAnterior.setName(act.getName());
+        }
+        return animalAnterior;
     }
 
     public boolean deleteAnimal(int id){

@@ -25,7 +25,7 @@ public class AnimalController{
     }
 
     @GetMapping("animals/details/{id}")
-    public String DetallesAnimal(@PathVariable int id, Model model) {
+    public String DetallesAnimal(@PathVariable int id, Model model) { //Model siempre al final
         Animal animal = as.getAnimal(id);
         String response = "redirect:/animals";
         if(animal != null){
@@ -47,9 +47,9 @@ public class AnimalController{
         if(bindingResult.hasErrors()){
             return "create";
         }else{
-            //Modelo Valido
             as.addAnimal(animal);
-            return "redirect:/animals";
+            //return "/animals";
+            return "redirect:/animals/details/" + animal.getId();
         }
     }
 
@@ -65,7 +65,7 @@ public class AnimalController{
         if(bindingResult.hasErrors()){
             resultado = "edit";
         }else{
-            //Modelo Valido
+
             as.editAnimal(animal);
         }
         return resultado;
@@ -73,18 +73,15 @@ public class AnimalController{
 
     @GetMapping("/animals/delete/{id}")
     public String borrarAnimal(Model model, @PathVariable int id){
-        model.addAttribute("animal", as.getAnimal(id));
+        model.addAttribute("animal", as.getAnimal(id)); //Recibe animal
         return "delete";
     }
 
     @PostMapping("/animals/delete")
-    public String borrarAnimal(@Valid @ModelAttribute("animal") Animal animal){
-        as.deleteAnimal(animal.getId());
+    public String borrarAnimal(@ModelAttribute("animal") Animal animal){
+        as.deleteAnimal(animal.getId()); //Borra animal
         return "redirect:/animals";
-
     }
-
-
 }
 
 /*

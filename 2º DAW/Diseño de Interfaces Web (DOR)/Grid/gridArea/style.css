@@ -1,0 +1,29 @@
+.contenedor {
+    display: grid;
+    grid-template:
+        "a b b" 20fr
+        "a . d" 20fr
+        "c c d" 20fr
+        / 20fr 20fr 20fr;
+}
+
+.a{
+    background-color: yellow;
+    grid-area:a;
+}
+
+.b{
+    background-color: rgb(255, 0, 0);
+    grid-area:b;
+}
+
+.c{
+    background-color: rgb(38, 255, 0);
+    grid-area:c;
+}
+
+.d{
+    background-color: rgb(30, 0, 255);
+    grid-area:d;
+    
+}

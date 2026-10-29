@@ -18,11 +18,18 @@
         <label for="name" class="from-label">Nombre:</label>
         <input class="form-control" type="text" id="name" th:field="*{name}">
         <br>
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+        <br>
+
         <label class="from-label">Vida media:</label>
         <input class="form-control" type="number" th:field="*{averageLifeSpan}">
         <br>
+        <p th:if="${#fields.hasErrors('averageLifeSpan')}" th:errors="*{averageLifeSpan}"></p>
+        <br>
+
         <label class="from-label">Extinto:</label>
         <input class="from-check-input" type="checkbox" th:field="*{extinct}">
+        <br>
         <br>
         <input class="btn btn-outline-success" type="submit" value="Crear">
 </form>

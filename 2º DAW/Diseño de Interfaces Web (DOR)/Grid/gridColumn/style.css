@@ -1,0 +1,32 @@
+.contenedor{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 200px);
+}
+
+.a{
+    background-color: yellow;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.b{
+    background-color: rgb(255, 0, 0);
+    grid-row-start: 3;
+    grid-column-start:1;
+    grid-column-end:3;
+}
+
+.c{
+    background-color: rgb(38, 255, 0);
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.d{
+    background-color: rgb(30, 0, 255);
+    grid-row-start:2;
+    grid-row-end:4;
+    grid-column-start:3;
+    
+}

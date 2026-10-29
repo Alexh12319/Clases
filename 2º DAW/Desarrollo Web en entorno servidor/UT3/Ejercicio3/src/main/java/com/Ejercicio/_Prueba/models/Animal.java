@@ -1,8 +1,13 @@
 package com.Ejercicio._Prueba.models;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
 public class Animal {
     int id;
+    @NotBlank(message = "El nombre no puede estar vacío")
     String name;
+    @Positive(message = "La vida media no puede ser negativa o 0")
     int averageLifeSpan;
     boolean extinct;
 

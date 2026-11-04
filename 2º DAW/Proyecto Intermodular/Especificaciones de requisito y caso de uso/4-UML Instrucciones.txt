@@ -1,0 +1,125 @@
+4. Diagrama de casos de uso
+    Elaborar un diagrama UML de casos de uso que represente las principales interacciones entre los actores identificados y el sistema.
+    
+    El diagrama deberá incluir:
+    
+    Los actores que interactúan con la aplicación.
+
+
+    Los principales casos de uso del sistema.
+
+
+    Las asociaciones entre actores y casos de uso.
+
+
+    Las relaciones include y extend, cuando su utilización esté justificada.
+
+
+    Los límites del sistema.
+
+
+
+-------------------------------------------------------
+
+4. Diagrama de casos de uso (Estructura y Relaciones)
+El diagrama UML de casos de uso agrupa las interacciones clave del sistema en torno al núcleo de la aplicación:
+
+Límites del sistema: Delimitados por la aplicación web "PatitasTenerife".
+
+Actores externos: Administrador, Trabajador, Veterinario, Voluntario/Acogida, Visitante/Adoptante.
+
+Casos de uso principales:
+
+Autenticar usuario (Login / Logout).
+
+Gestionar usuarios y roles (Actor: Administrador).
+
+Registrar y actualizar animal (Actor: Trabajador / Veterinario).
+
+Gestionar seguimiento sanitario (Actor: Veterinario). Incluye (include) la generación automática de pautas/tareas.
+
+Crear y asignar tarea (Actor: Trabajador).
+
+Ejecutar tarea de cuidado (Actor: Voluntario / Trabajador).
+Consultar catálogo público y filtrar (Actor: Visitante / Adoptante).
+
+Enviar solicitud de adopción/acogida (Actor: Visitante / Adoptante).
+
+Gestionar solicitudes (Actor: Trabajador).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

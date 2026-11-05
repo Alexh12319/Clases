@@ -1,7 +1,10 @@
 package com.Ejercicio._Prueba.controllers;
 
 import com.Ejercicio._Prueba.models.Animal;
+
+
 import com.Ejercicio._Prueba.service.AnimalService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

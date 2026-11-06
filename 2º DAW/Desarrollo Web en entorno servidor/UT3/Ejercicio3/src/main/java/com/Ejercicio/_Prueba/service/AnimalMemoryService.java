@@ -1,4 +1,5 @@
 package com.Ejercicio._Prueba.service;
+import com.Ejercicio._Prueba.interfaces.AnimalService;
 import com.Ejercicio._Prueba.models.Animal;
 import org.springframework.stereotype.Service;
 import org.springframework.context.annotation.Profile;
@@ -9,14 +10,16 @@ import java.util.Arrays;
 
 @Service
 @Profile("memory")
-public class AnimalMemoryService implements AnimalService{
+public class AnimalMemoryService implements AnimalService {
     ArrayList<Animal> animales = new ArrayList<>(
             Arrays.asList(new Animal(1, "Dodo", 50, true), new Animal(2, "Perro", 10, false)));
     int animalsCount = 2; //Al poner dos antes, lo inicializo en dos
+
     @Override
     public ArrayList<Animal> getAnimals(){
         return animales;
     }
+
     @Override
     public Animal getAnimal(int id){
         Animal animalin = new Animal();

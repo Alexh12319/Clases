@@ -1,9 +1,7 @@
 package com.Ejercicio._Prueba.controllers;
 
 import com.Ejercicio._Prueba.models.Animal;
-
-
-import com.Ejercicio._Prueba.service.AnimalService;
+import com.Ejercicio._Prueba.interfaces.AnimalService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,8 +43,7 @@ public class AnimalController{
     }
 
     @PostMapping("/animals/create")
-    public String crearAnimal(@Valid @ModelAttribute("animal") Animal animal,
-                              BindingResult bindingResult){
+    public String crearAnimal(@Valid @ModelAttribute("animal") Animal animal, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "create";
         }else{
@@ -68,7 +65,6 @@ public class AnimalController{
         if(bindingResult.hasErrors()){
             resultado = "edit";
         }else{
-
             as.editAnimal(animal);
         }
         return resultado;
